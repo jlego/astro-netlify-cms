@@ -8,7 +8,7 @@ to any <a href="https://astro.build/">Astro</a> project
 ## Installation
 
 ```bash
-npm i astro-netlify-cms
+npm i astro-netlify-cloudinary
 ```
 
 ## What is this?
@@ -38,7 +38,7 @@ Astro config file, adding it to the `integrations` array.
 // astro.config.mjs
 
 import { defineConfig } from 'astro/config';
-import NetlifyCMS from 'astro-netlify-cms';
+import NetlifyCMS from 'astro-netlify-cloudinary';
 
 export default defineConfig({
   integrations: [
@@ -131,7 +131,7 @@ previewStyles: [
 **Type:** `boolean`  
 **Default:** `false`
 
-By default, `astro-netlify-cms` injects Netlify’s [Identity Widget](https://github.com/netlify/netlify-identity-widget) across your site to enable authentication. If you only want to inject the widget on the admin route, you can set `disableIdentityWidgetInjection: true`.
+By default, `astro-netlify-cloudinary` injects Netlify’s [Identity Widget](https://github.com/netlify/netlify-identity-widget) across your site to enable authentication. If you only want to inject the widget on the admin route, you can set `disableIdentityWidgetInjection: true`.
 
 ## To-do
 

@@ -5,10 +5,18 @@
     <meta
       name="description"
       content="Admin dashboard for managing website content"
-    />
+    /> 
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js" is:inline></script>
+    <script src="https://unpkg.com/react-dom@^16/umd/react-dom.production.min.js" is:inline></script>
+    <script src="https://unpkg.com/netlify-cms-widget-ckeditor4@^0.0.2" is:inline></script>
+    <script src="https://www.unpkg.com/netlify-cms-widget-simplemde" is:inline></script>
+    <!-- <script src="https://unpkg.com/netlify-cms-widget-tab@^1.0.0" is:inline></script> -->
     <script>
-      import options from 'virtual:astro-netlify-cms/user-config';
+      import options from 'virtual:astro-netlify-cloudinary/user-config';
       import initCMS from './dist/cms';
+      options.cms.registerWidget('ckeditor', window.CkeditorControl, window.CkeditorPreview);
+      options.cms.registerWidget("simplemde", window.SimpleMDEControl, window.SimpleMDEPreview);
+      // options.cms.registerWidget('tab', window.TabControl, window.TabPreview);
       initCMS(options);
     </script>
     <style is:global>

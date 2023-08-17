@@ -2,7 +2,7 @@ import type { CmsConfig } from 'netlify-cms-core';
 import type { Plugin } from 'vite';
 import type { PreviewStyle } from './types';
 
-const virtualModuleId = 'virtual:astro-netlify-cms/user-config';
+const virtualModuleId = 'virtual:astro-netlify-cloudinary/user-config';
 const resolvedVirtualModuleId = '\0' + virtualModuleId;
 
 function generateVirtualConfigModule({
@@ -31,6 +31,14 @@ function generateVirtualConfigModule({
 
   return `${imports.join('\n')}
 import * as NCMS from 'netlify-cms-app';
+import cloudinary from 'netlify-cms-media-library-cloudinary';
+import PostPreview from 'astro-netlify-cloudinary/postPreview';
+import PagePreview from 'astro-netlify-cloudinary/pagePreview';
+import ComponentPreview from 'astro-netlify-cloudinary/componentPreview';
+NCMS.registerMediaLibrary(cloudinary);
+NCMS.registerPreviewTemplate("posts", PostPreview);
+NCMS.registerPreviewTemplate("pages", PagePreview);
+NCMS.registerPreviewTemplate("components", ComponentPreview);
 ${identityWidget}
 export default {
   cms: NCMS,
