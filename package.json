@@ -1,6 +1,6 @@
 {
   "name": "astro-netlify-cloudinary",
-  "version": "0.5.46",
+  "version": "0.5.47",
   "description": "Add Netlify CMS’s admin dashboard to your Astro project",
   "author": "legojs",
   "license": "MIT",
@@ -10,10 +10,13 @@
     "./cms": "./dist/cms.js",
     "./identity-widget": "./dist/identity-widget.js",
     "./vite-plugin-admin-dashboard": "./dist/vite-plugin-admin-dashboard.js",
-    "./admin-dashboard.astro": "./admin-dashboard.astro",
-    "./postPreview": "./postPreview.jsx",
-    "./pagePreview": "./pagePreview.jsx",
-    "./componentPreview": "./componentPreview.jsx"
+    "./admin-dashboard.astro": "./admin-dashboard.astro",    
+    "./development/postPreview": "./dist/postPreview.js",
+    "./development/pagePreview": "./dist/pagePreview.js",
+    "./development/componentPreview": "./dist/componentPreview.js",
+    "./production/postPreview": "./dist/postPreview.jsx",
+    "./production/pagePreview": "./dist/pagePreview.jsx",
+    "./production/componentPreview": "./dist/componentPreview.jsx"
   },
   "types": "./dist/index.d.ts",
   "scripts": {

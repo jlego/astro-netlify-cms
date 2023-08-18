@@ -32,9 +32,9 @@ function generateVirtualConfigModule({
   return `${imports.join('\n')}
 import * as NCMS from 'netlify-cms-app';
 import cloudinary from 'netlify-cms-media-library-cloudinary';
-import PostPreview from 'astro-netlify-cloudinary/postPreview';
-import PagePreview from 'astro-netlify-cloudinary/pagePreview';
-import ComponentPreview from 'astro-netlify-cloudinary/componentPreview';
+import PostPreview from 'astro-netlify-cloudinary/${process.env.NODE_ENV}/postPreview';
+import PagePreview from 'astro-netlify-cloudinary/${process.env.NODE_ENV}/pagePreview';
+import ComponentPreview from 'astro-netlify-cloudinary/${process.env.NODE_ENV}/componentPreview';
 NCMS.registerMediaLibrary(cloudinary);
 NCMS.registerPreviewTemplate("posts", PostPreview);
 NCMS.registerPreviewTemplate("pages", PagePreview);
